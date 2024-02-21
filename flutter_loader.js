@@ -24,21 +24,21 @@
  // Create style element
  var style = document.createElement('style');
  style.textContent = `
- 
-   body{
-    height: 100%;
-    background-color: #000;
-    display: flex;
-    flex-direction: column;
-   }
 
+  body{
+    
+    background-color: #000;
+  }
+ 
    .parent {
     display: none;
-     margin-top: 150px;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
+    padding: 40px 0px;
+    margin-top: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
    }
  
    .word {
@@ -155,20 +155,16 @@
 wordflick();
 
 
-
+// Function to hide the preloader
 function hidePreloader() {
     var parentDiv = document.querySelector('.parent');
-    parentDiv.style.opacity = '1'; 
+    parentDiv.style.opacity = '1'; // Fade out the preloader by changing its opacity
     setTimeout(function() {
-        parentDiv.style.display = 'flex'; 
-        document.body.style.removeProperty('height');
-        document.body.style.removeProperty('background-color');
-        document.body.style.removeProperty('display');
-        document.body.style.removeProperty('flex-direction');
-    }, 100); 
+        parentDiv.style.display = 'flex'; // Hide the preloader after fading out
+    }, 500); // Adjust the fade out time as needed
 }
 
-
+// Hide the preloader when the DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
     hidePreloader();
 });
