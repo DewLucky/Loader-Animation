@@ -33,6 +33,7 @@
    }
 
    .parent {
+    display: none;
      margin-top: 150px;
      display: flex;
      flex-direction: column;
@@ -154,20 +155,20 @@
 wordflick();
 
 
-// Function to hide the preloader
+
 function hidePreloader() {
     var parentDiv = document.querySelector('.parent');
-    parentDiv.style.opacity = '0'; // Fade out the preloader by changing its opacity
+    parentDiv.style.opacity = '1'; 
     setTimeout(function() {
-        parentDiv.style.display = 'none'; // Hide the preloader after fading out
+        parentDiv.style.display = 'flex'; 
         document.body.style.removeProperty('height');
         document.body.style.removeProperty('background-color');
         document.body.style.removeProperty('display');
         document.body.style.removeProperty('flex-direction');
-    }, 500); // Adjust the fade out time as needed
+    }, 100); 
 }
 
-// Hide the preloader when the DOM content is loaded
+
 document.addEventListener('DOMContentLoaded', () => {
     hidePreloader();
 });
