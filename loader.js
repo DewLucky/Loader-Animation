@@ -32,7 +32,7 @@
    .parent {
     padding: 40px 0px;
     margin-top: 140px;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -148,7 +148,6 @@
          wordDiv.textContent = part;
      }, speed);
  };
- 
  
 
 
