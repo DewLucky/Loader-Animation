@@ -26,15 +26,13 @@
  style.textContent = `
 
   body{
-    
     background-color: #000;
   }
  
    .parent {
-    display: none;
     padding: 40px 0px;
     margin-top: 140px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -151,24 +149,22 @@
      }, speed);
  };
  
- // Start word flicker
-wordflick();
+ 
 
 
 // Function to hide the preloader
-function hidePreloader() {
+function Preloader() {
     var parentDiv = document.querySelector('.parent');
-    parentDiv.style.opacity = '1'; // Fade out the preloader by changing its opacity
-    setTimeout(function() {
-        parentDiv.style.display = 'flex'; // Hide the preloader after fading out
-    }, 500); // Adjust the fade out time as needed
+    parentDiv.style.display = 'flex';
+    // Start word flicker
+    wordflick();
 }
 
 // Hide the preloader when the DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    hidePreloader();
+    Preloader();
 });
 
 // Fallback: If all external resources are loaded and the DOMContentLoaded event doesn't fire,
 // hide the preloader when the window's load event is triggered.
-window.addEventListener('load', hidePreloader);
+window.addEventListener('load', Preloader);
