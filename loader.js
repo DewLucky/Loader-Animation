@@ -46,6 +46,7 @@
  
    .wait{
      margin-top: 20px;
+     margin-bottom: 30px;
      color: white;
    }
    
