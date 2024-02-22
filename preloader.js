@@ -149,14 +149,13 @@
      }, speed);
  };
  
-
+// Start word flicker
+wordflick();
 
 // Function to hide the preloader
 function Preloader() {
     var parentDiv = document.querySelector('.parent');
     parentDiv.style.display = 'flex';
-    // Start word flicker
-    wordflick();
 }
 
 // Hide the preloader when the DOM content is loaded
