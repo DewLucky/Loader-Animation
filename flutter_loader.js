@@ -32,7 +32,7 @@
    .parent {
     padding: 40px 0px;
     margin-top: 140px;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -149,15 +149,14 @@
      }, speed);
  };
  
- 
+ // Start word flicker
+ wordflick();
 
 
 // Function to hide the preloader
 function Preloader() {
     var parentDiv = document.querySelector('.parent');
     parentDiv.style.display = 'flex';
-    // Start word flicker
-    wordflick();
 }
 
 // Hide the preloader when the DOM content is loaded
