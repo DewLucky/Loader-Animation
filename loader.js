@@ -24,12 +24,15 @@
  // Create style element
  var style = document.createElement('style');
  style.textContent = `
-
   body{
+    height: 100%;
     background-color: #000;
+    overflow: hidden;
   }
  
    .parent {
+    height: 100%;
+    overflow: hidden;
     margin-top: 110px;
     display: flex;
     flex-direction: column;
