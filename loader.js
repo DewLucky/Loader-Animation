@@ -155,7 +155,9 @@
                       offset++;
                   }
                   else {
-                      offset--;
+                      if(!(offset < 0 || offset == 0 || offset==1))
+                        offset-=2;
+                      else offset--;
                   }
               }
               wordDiv.textContent = part;
