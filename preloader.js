@@ -30,19 +30,15 @@
   }
  
    .parent {
-    padding: 40px 0px;
-    margin-top: 140px;
+    margin-top: 110px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
    }
  
    .word {
-     padding: 0 40px;
      text-align: center;
-     margin: 50px auto 0 auto;
      color: white;
      font: 700 normal 2.5em 'tahoma';
      text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
