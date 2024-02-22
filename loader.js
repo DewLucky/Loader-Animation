@@ -115,39 +115,55 @@
      skip_delay = 15,
      speed = 70;
  
- var wordflick = function () {
-     setInterval(function () {
-         if (forwards) {
-             if (offset >= words[i].length) {
-                 ++skip_count;
-                 if (skip_count == skip_delay) {
-                     forwards = false;
-                     skip_count = 0;
-                 }
-             }
-         }
-         else {
-             if (offset == 0) {
-                 forwards = true;
-                 i++;
-                 offset = 0;
-                 if (i >= len) {
-                     i = 0;
-                 }
-             }
-         }
-         part = words[i].substr(0, offset);
-         if (skip_count == 0) {
-             if (forwards) {
-                 offset++;
-             }
-             else {
-                 offset--;
-             }
-         }
-         wordDiv.textContent = part;
-     }, speed);
- };
+     var wordflick = function () {
+      setInterval(function () {
+          if (forwards) {
+              if (i >= len) {
+                  // Reset the index if it goes out of bounds
+                  i = 0;
+              }
+              if (words[i] === undefined) {
+                  // Reset i to 0 if words[i] is undefined
+                  i = 0;
+              }
+              if (offset >= words[i].length) {
+                  ++skip_count;
+                  if (skip_count == skip_delay) {
+                      forwards = false;
+                      skip_count = 0;
+                  }
+              }
+          }
+          else {
+              if (i >= len) {
+                  // Reset the index if it goes out of bounds
+                  i = 0;
+              }
+              if (words[i] === undefined) {
+                  // Reset i to 0 if words[i] is undefined
+                  i = 0;
+              }
+              if (offset == 0) {
+                  forwards = true;
+                  i++;
+                  offset = 0;
+              }
+          }
+          // Check if words[i] is undefined again after potential reset
+          if (words[i] !== undefined) {
+              part = words[i].substr(0, offset);
+              if (skip_count == 0) {
+                  if (forwards) {
+                      offset++;
+                  }
+                  else {
+                      offset--;
+                  }
+              }
+              wordDiv.textContent = part;
+          }
+      }, speed);
+  };
  
 // Start word flicker
 wordflick();
@@ -155,7 +171,6 @@ wordflick();
 // Function to hide the preloader
 function Preloader() {
     var parentDiv = document.querySelector('.parent');
-    parentDiv.style.display = 'flex';
 }
 
 // Hide the preloader when the DOM content is loaded
